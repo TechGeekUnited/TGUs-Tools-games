@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      
+    <head>
+    <script>
+      function openNewWindow() {
+        const w = window.open('about:blank'); // Open about:blank in a new tab
+        
+        // Get the current HTML content of the page
+        const htmlContent = document.documentElement.outerHTML;
+        
+        // Write the HTML content to the new tab
+        w.document.open();
+        w.document.write(htmlContent);
+        w.document.close();
+      }
+    </script>
+  </head>
+<head>
+  <title>TGU Tools And Games.</title>
+  <style>
+    /* Style for the menu */
+    ul.menu {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #ff8a24;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    ul.menu li {
+      display: inline;
+      margin-right: 10px;
+    }
+    
+    ul.menu li a {
+      color: black;
+      text-decoration: none;
+      padding: 10px;
+      font-weight: bold;
+    }
+    
+    ul.menu li a:hover {
+      background-color: black; 
+      color: black;
+    }
+  
+    .content {
+      display: none;
+      background-color: #ff8a24;
+      color: white;
+      padding: 20px;
+      margin-top: 10px;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column; 
+      justify-content: center; 
+    }
+    
+    /* Style for the background */
+    body {
+      background-color: black;
+    }
+  </style>
+  
+  <script>
+    // JavaScript function to show/hide divs based on the menu item clicked
+    function showContent(contentId) {
+      var content = document.getElementById(contentId);
+      
+      // Hide all content divs
+      var contents = document.getElementsByClassName("content");
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = "none";
+      }
+      
+      // Show the selected content div
+      content.style.display = "block";
+    }
+    
+    // Show the "Home" content div by default
+    window.onload = function() {
+      showContent('home');
+    };
+  </script>
+</head>
+<body>
+  <ul class="menu">
+    <li><a  onclick="showContent('home')">Home</a></li>
+    <li><a  onclick="showContent('about')">About</a></li>
+    <li><a onclick="showContent('games')">Games</a>
+    <li><a onclick="showContent('tools')">Tools</a></li>
+    <li><a onclick="showContent('download')">Offline Copy</a></li>
+    <li><a onclick="showContent('contact')">Contact</a>
+  </ul>
+  
+  <div id="home" class="content">
+    <h2>Welcome To TGU tools/games</h2>
+    <p>Welcome!, Before you do anything please read and follow the below rules.</p><br><p>You agree to not use any tools not permitted in the current class(EX: Using calculator in math) </p><br><p>You Also Agree to only play games during "Free Time" Or when your teacher permits it.</p>
+  </div>
+  
+  <div id="about" class="content">
+    <h1>About</h1>
+    <h3>What is TGU tools/games?</h3><br>
+    <p>TGU Tools/Games is a games and tools platform for school that does not permit you to be on it without permission from a teacher or supervisor.</p>
+
+  </div>
+  
+  <div id="contact" class="content">
+    <h2>Contact</h2>
+    <p>TGU Tools/Games Doesn't Currently have a contact email, phone number, ETC.</p>
+  </div>
+    <div id="games" class="content">
+    <h2>Games</h2>
+    <p>As stated on the mainpage games are not allowed unless approved and/or during "Free Time"</p>
+	<p>All Games are opened in about:blank unless explicitly stated</p>
+      <p>Click on a game's name to open it.</p>
+	  	        <li><a onclick="oldeaglergame()">Eaglercraft beta 1.3_01</a>
+	        <li><a onclick="eaglergame()">Eaglercraft 1.5.2</a>
+			<li><a onclick="eaglergamenew()">Eaglercraft 1.8.8</a>
+			<li><a onclick="showContent('htmltd')">HTML Tower Defence</a>
+			<li><a onclick="idlebreakouti()">Idle Breakout</a>
+			<li><a onclick="ducklife()">Duck Life</a>
+			<li><a onclick="gdg()">Google Dinosaur Game</a>
+			<li><a onclick="ducklife2()">Duck Life 2 (Broken)</a>
+			<li><a onclick="run3()">Run 3(Broken Temp. External link detectable)</a>
+<li><a onclick="window.open('https://forms.gle/eNqpfnHrCPPgqB229')">Request A Game(Not About:Blanked)</a></li>
+  </div>
+      <div id="tools" class="content">
+            <h2>Tools</h2>
+    <p>As stated on the main page you shall not use these tools without authorization.</p>
+      <p>Click on a tool's name to open it.</p>
+      <li><a onclick="showContent('calc')">Calculator</a>
+	   <li><a onclick="showContent('clock')">Exact Clock</a>
+	        <li><a onclick="openNewWindow()">About:blank this site.(Not fully fool-proofed)</a>
+      </div>
+
+  
+       <div id="calc" class="content">
+         <div class="calculator">
+  <div class="input" id="input"></div>
+  <div class="buttons">
+    <div class="operators">
+      <div>+</div>
+      <div>-</div>
+      <div>&times;</div>
+      <div>&divide;</div>
+    </div>
+    <div class="leftPanel">
+      <div class="numbers">
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+      </div>
+      <div class="numbers">
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+      </div>
+      <div class="numbers">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+      <div class="numbers">
+        <div>0</div>
+        <div>.</div>
+        <div id="clear">C</div>
+      </div>
+    </div>
+    <div class="equal" id="result">=</div>
+  </div>
+</div>
+<script>
+  "use strict";
+
+var input = document.getElementById('input'), // input/output button
+  number = document.querySelectorAll('.numbers div'), // number buttons
+  operator = document.querySelectorAll('.operators div'), // operator buttons
+  result = document.getElementById('result'), // equal button
+  clear = document.getElementById('clear'), // clear button
+  resultDisplayed = false; // flag to keep an eye on what output is displayed
+
+// adding click handlers to number buttons
+for (var i = 0; i < number.length; i++) {
+  number[i].addEventListener("click", function(e) {
+
+
+    var currentString = input.innerHTML;
+    var lastChar = currentString[currentString.length - 1];
+
+    if (resultDisplayed === false) {
+      input.innerHTML += e.target.innerHTML;
+    } else if (resultDisplayed === true && lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷") {
+      resultDisplayed = false;
+      input.innerHTML += e.target.innerHTML;
+    } else {
+      resultDisplayed = false;
+      input.innerHTML = "";
+      input.innerHTML += e.target.innerHTML;
+    }
+
+  });
+}
+
+// adding click handlers to number buttons
+for (var i = 0; i < operator.length; i++) {
+  operator[i].addEventListener("click", function(e) {
+
+    // storing current input string and its last character in variables - used later
+    var currentString = input.innerHTML;
+    var lastChar = currentString[currentString.length - 1];
+
+    // if last character entered is an operator, replace it with the currently pressed one
+    if (lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷") {
+      var newString = currentString.substring(0, currentString.length - 1) + e.target.innerHTML;
+      input.innerHTML = newString;
+    } else if (currentString.length == 0) {
+      // if first key pressed is an opearator, don't do anything
+      console.log("enter a number first");
+    } else {
+      // else just add the operator pressed to the input
+      input.innerHTML += e.target.innerHTML;
+    }
+
+  });
+}
+
+result.addEventListener("click", function() {
+
+  var inputString = input.innerHTML;
+  var numbers = inputString.split(/\+|\-|\×|\÷/g);
+  var operators = inputString.replace(/[0-9]|\./g, "").split("");
+  var divide = operators.indexOf("÷");
+  while (divide != -1) {
+    numbers.splice(divide, 2, numbers[divide] / numbers[divide + 1]);
+    operators.splice(divide, 1);
+    divide = operators.indexOf("÷");
+  }
+
+  var multiply = operators.indexOf("×");
+  while (multiply != -1) {
+    numbers.splice(multiply, 2, numbers[multiply] * numbers[multiply + 1]);
+    operators.splice(multiply, 1);
+    multiply = operators.indexOf("×");
+  }
+
+  var subtract = operators.indexOf("-");
+  while (subtract != -1) {
+    numbers.splice(subtract, 2, numbers[subtract] - numbers[subtract + 1]);
+    operators.splice(subtract, 1);
+    subtract = operators.indexOf("-");
+  }
+
+  var add = operators.indexOf("+");
+  while (add != -1) {
+    // using parseFloat is necessary, otherwise it will result in string concatenation :)
+    numbers.splice(add, 2, parseFloat(numbers[add]) + parseFloat(numbers[add + 1]));
+    operators.splice(add, 1);
+    add = operators.indexOf("+");
+  }
+
+  input.innerHTML = numbers[0]; // displaying the output
+
+  resultDisplayed = true; // turning flag if result is displayed
+});
+
+// clearing the input on press of clear
+clear.addEventListener("click", function() {
+  input.innerHTML = "";
+})
+</script>
+<style>
+  
+.calculator {
+  padding: 20px;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 1px;
+}
+
+.input {
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  height: 60px;
+  padding-right: 15px;
+  padding-top: 10px;
+  text-align: right;
+  margin-right: 6px;
+  font-size: 2.5rem;
+  overflow-x: auto;
+  transition: all .2s ease-in-out;
+}
+
+.input:hover {
+  border: 1px solid #bbb;
+  -webkit-box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.buttons {}
+
+.operators {}
+
+.operators div {
+  display: inline-block;
+  border: 1px solid #bbb;
+  border-radius: 1px;
+  width: 80px;
+  text-align: center;
+  padding: 10px;
+  margin: 20px 4px 10px 0;
+  cursor: pointer;
+  transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
+}
+
+.operators div:hover {
+  background-color: #ddd;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-color: #aaa;
+}
+
+.operators div:active {
+  font-weight: bold;
+}
+
+.leftPanel {
+  display: inline-block;
+}
+
+.numbers div {
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 1px;
+  width: 80px;
+  text-align: center;
+  padding: 10px;
+  margin: 10px 4px 10px 0;
+  cursor: pointer;
+  background-color: black;
+  transition: border-color .2s ease-in-out, background-color .2s, box-shadow .2s;
+}
+
+.numbers div:hover {
+  background-color: #f1f1f1;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-color: #bbb;
+}
+
+.numbers div:active {
+  font-weight: bold;
+}
+
+div.equal {
+  display: inline-block;
+  border: 1px solid #3079ED;
+  border-radius: 1px;
+  width: 17%;
+  text-align: center;
+  padding: 127px 10px;
+  margin: 10px 6px 10px 0;
+  vertical-align: top;
+  cursor: pointer;
+  color: #FFF;
+  background-color: #4d90fe;
+  transition: all .2s ease-in-out;
+}
+
+div.equal:hover {
+  background-color: #307CF9;
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-color: #1857BB;
+}
+
+div.equal:active {
+  font-weight: bold;
+}
+</style>
+       </div>
+</body>
+</html>
+ <div id="download" class="content">
+<body>
+  <h1>Save Site locally.</h1>
+  <p>Click <a href="javascript:void(0);" onclick="savePageSource()">here</a> to save the one file offline copy of TGU's tools and games to your device.</p>
+  <script type="text/javascript">
+    function savePageSource() {
+      var htmlContent = document.documentElement.innerHTML;
+      var link = document.createElement('a');
+      link.href = 'data:text/html;charset=utf-8,' + encodeURIComponent(htmlContent);
+      link.download = 'Offline Copy.html';
+      link.click();
+    }
+  </script>
+</body>
+</div>
+ <head>
+  <script>
+<!-- Function to fetch HTML content and write it to about:blank -->
+function eaglergame() {
+  const url = 'https://up.joshua-thayer.repl.co';
+
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      const newWindow = window.open('about:blank', '_blank');
+      newWindow.document.open();
+      newWindow.document.write(html);
+      newWindow.document.close();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+
+		  
+		  
+}
+
+  </script>
+</head>
+ <head>
+  <script>
+<!-- Function to fetch HTML content and write it to about:blank -->
+function oldeaglergame() {
+  const url = 'https://eb.joshua-thayer.repl.co';
+
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      const newWindow = window.open('about:blank', '_blank');
+      newWindow.document.open();
+      newWindow.document.write(html);
+      newWindow.document.close();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+  </script>
+</head>
+ <head>
+  <script>
+<!-- Function to fetch HTML content and write it to about:blank -->
+function eaglergamenew() {
+  const url = 'https://en.joshua-thayer.repl.co';
+
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      const newWindow = window.open('about:blank', '_blank');
+      newWindow.document.open();
+      newWindow.document.write(html);
+      newWindow.document.close();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+  </script>
+</head>
+ <head>
+    <script>
+      function ERRWWW() {
+        const w = window.open();
+            w.document.open();
+            w.document.write("<p>Error Please connect to the World Wide Web");
+            w.document.close();
+          };
+    </script>
+  </head>
+   <head>
+    <script>
+      function ERRGNA() {
+        const w = window.open();
+            w.document.open();
+            w.document.write("<h1>Error - Game not available right now; Check back later :)</h1>");
+            w.document.close();
+          };
+    </script>
+  </head>
+  <head>
+<script>
+  function idlebreakouti() {
+    const w = window.open();
+    w.document.body.innerHTML = '<iframe src="https://idle-breakout-1.joshua-thayer.repl.co/" style="border:0px #ffffff none;" name="1" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>';
+  }
+</script>
+
+  </head>
+ <head>
+  <script>
+<!-- Function to fetch HTML content and write it to about:blank -->
+function ducklife() {
+  const url = 'https://dl1.joshua-thayer.repl.co';
+
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      const newWindow = window.open('about:blank', '_blank');
+      newWindow.document.open();
+      newWindow.document.write(html);
+      newWindow.document.close();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+  </script>
+</head>
+ <head>
+  <script>
+<!-- Function to fetch HTML content and write it to about:blank -->
+function ducklife2() {
+  const url = 'https://dl2.joshua-thayer.repl.co';
+
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      const newWindow = window.open('about:blank', '_blank');
+      newWindow.document.open();
+      newWindow.document.write(html);
+      newWindow.document.close();
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+  </script>
+</head>
+ <head>
+  <script>
+<!-- Function to fetch HTML content and write it to about:blank -->
+function run3() {
+  const url = 'https://run3.joshua-thayer.repl.co';
+
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      const newWindow = window.open('https://nativegames.net/run3/');
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
+
+  </script>
+</head>
+<script>
+let quickHideEnabled = true;
+document.addEventListener('keydown', function(event) {
+if((event.key == "q" || event.key == "Q") && event.altKey) {
+  event.preventDefault();
+  quickHideEnabled = !quickHideEnabled
+} else if ((event.key == "q" || event.key == "Q") && quickHideEnabled == true) {
+  document.write()
+  window.location = "https://classroom.google.com/u/0/h"
+}
+})
+</script>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.alert {
+  padding: 20px;
+  background-color: green;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: green;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+</style>
+</head>
+<div id="clock" class="content">
+<head>
+  <title>Current Time</title>
+  <style>
+    .clock {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      text-align: center;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock" id="time"></div>
+
+  <script>
+    // Function to update the clock
+    function updateTime() {
+      var currentTime = new Date();
+      var hours = currentTime.getHours();
+      var minutes = currentTime.getMinutes();
+      var seconds = currentTime.getSeconds();
+      var milliseconds = currentTime.getMilliseconds();
+
+      // Add leading zeros if necessary
+      hours = (hours < 10 ? "0" : "") + hours;
+      minutes = (minutes < 10 ? "0" : "") + minutes;
+      seconds = (seconds < 10 ? "0" : "") + seconds;
+
+      // Display the time in the specified format
+      var timeString = hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+      document.getElementById("time").textContent = timeString;
+    }
+
+    // Update the clock every second
+    setInterval(updateTime, 1);
+  </script>
+</body>
+</body>
+</div>
+
+  <head>
+
+<script>
+  function gdg() {
+    const w = window.open();
+    w.document.body.innerHTML = '<iframe src="https://chrome-dino.joshua-thayer.repl.co" style="border:0px #ffffff none;" name="1" scrolling="no" frameborder="0" marginheight="0px" marginwidth="0px" height="100%" width="100%" allowfullscreen></iframe>';
+  }
+</script>
+
+  </head>
+  <div id="htmltd" class="content">
+  <head>
+    <script>
+    function downloadFile() {
+      var link = document.createElement("a");
+      link.href = "https://htmltd.joshua-thayer.repl.co/index.html";
+      link.download = "https://htmltd.joshua-thayer.repl.co/index.html";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+  </head>
+ <h1>Sorry!</h1>
+ <p>Due To an issue of this site using showing/hiding divs for pages HTML TD Whould messup the menu to open it externally it <a onclick="downloadFile()">click here</a>.</p>
+</div>
